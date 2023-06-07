@@ -12,9 +12,10 @@ while True:
         print("SUM:\t\tA + B -> " + str(intA) + " + " + str(intB) + " = ", intA + intB)
         print("SUBTRACT:\tA - B -> " + str(intA) + " - " + str(intB) + " = ", intA - intB)
         print("MULTY:\t\tA x B -> " + str(intA) + " x " + str(intB) + " = ", intA * intB)
-        print("DIVISION:\tA / B -> " + str(intA) + " / " + str(intB) + " = ", end='')
         if intB == 0:
-            print("\"DIVIDE ON \"" + str(intB) + "\" IS FORBIDDEN!\"")
+            print("\n\t\t\"DIVIDE ON \"" + str(int(intB)) + "\" IS FORBIDDEN!\"\n")
         else:
-            print(round((intA / intB), 3))
-        print("POWER:\t\tA ^ B -> " + str(intA) + " ^ " + str(intB) + " = ", intA ** intB)
+            print("DIVISION:\tA / B -> " + str(intA) + " / " + str(intB) + " = ", round((intA / intB), 3))
+            print("FLOOR DIV.:\tA // B -> " + str(intA) + " // " + str(intB) + " = ", round((intA // intB), 3))
+            print("MODULE:\t\tA % B -> " + str(intA) + " % " + str(intB) + " = ", round((intA % intB), 3))
+        print("POWER:\t\tA ^ B -> " + str(intA) + " ^ " + str(intB) + " = ", round((intA ** intB),3))

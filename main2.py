@@ -1,6 +1,7 @@
 print("\n\tTask 2")
 print("\nARITHMETICAL OPERATIONS:")
-print("1 - SUM\n2 - SUBTRACT\n3 - MULTY\n4 - DIVISION\n5 - POWER")
+print("1 - SUM\n2 - SUBTRACT\n3 - MULTY\n4 - DIVISION"
+      "\n5 - FLOOR DIVISION\n6 - MODULO\n7 - POWER")
 
 ind = 0
 
@@ -8,9 +9,10 @@ while True:
     ind += 1
     print("\n" + str(ind) + " - ITERATION")
 
-    indOp = abs(int(input("Enter num operation: ")))
-    if indOp == 0 or indOp > 5:
-        print("\tERROR!\n\tENTER NUMBER from 1...to...5")
+    indOp = input("Enter num operation: ")
+    indOp = abs(int(indOp))
+    if indOp == 0 or indOp > 7:
+        print("\tERROR!\n\tENTER NUMBER from 1...to...7")
         continue
 
     intA = float(input("\tEnter value A = "))
@@ -25,11 +27,15 @@ while True:
         print("SUBTRACT:\tA - B = ", intA - intB)
     elif indOp == 3:
         print("MULTY:\tA * B = ", intA * intB)
-    elif indOp == 4:
-        print("DIVISION:\tA / B = ", end='')
+    elif indOp == 4 or indOp == 5 or indOp == 6:
         if intB == 0:
             print("\"DIVIDE ON \"" + str(int(intB)) + "\" IS FORBIDDEN!\"")
         else:
-            print(round((intA / intB), 3))
+            if indOp == 4:
+                print("DIVISION:\tA / B = ", round((intA / intB), 3))
+            elif indOp == 5:
+                print("FLOOR DIV.:\tA // B = ", round((intA // intB), 3))
+            elif indOp == 6:
+                print("MODULO:\tA % B = ", round((intA % intB), 3))
     else:
-        print("POWER:\tA ^ B = ", intA + intB)
+        print("POWER:\tA ^ B = ", round((intA ** intB),3))
